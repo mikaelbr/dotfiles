@@ -35,9 +35,11 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 # Include Aliases
 source ~/.priv/aliases.sh
 
-# Include passwords/API keys etc, stored as env.
-source ~/.priv/env_config.sh
-
+# Include passwords/API keys etc, stored as env. (if exists)
+if [ -f ~/.priv/env_config.sh ];
+then
+    source ~/.priv/env_config.sh
+fi
 
 export PYTHONPATH=$PYTHONPATH:/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann
 
